@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { axiosWithAuth } from '../utils/axiosWithAuth'
-import Axios from 'axios';
 
 const Container = styled.section`
     margin: 0 5%;
@@ -44,7 +43,6 @@ const AddFriend = (props) => {
     const handleSubmit = e => {
 
         e.preventDefault();
-        // Axios.defaults.headers.post['body'] = friend;
         console.log(friend);
         axiosWithAuth()({ url: "http://localhost:5000/api/friends",
                           method: "POST",

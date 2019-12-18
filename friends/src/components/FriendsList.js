@@ -21,9 +21,11 @@ const FriendsList = (props) => {
 
     
     const [friends, setFriends] = useState([]);
+
     const [update, setUpdate] = useState(0);
-   
+  
     useEffect(() => {
+        console.log(update);
         const getFriends = () => {
             axiosWithAuth().get("http://localhost:5000/api/friends")
             .then( res => {
