@@ -49,14 +49,15 @@ const AddFriend = (props) => {
                           data: friend,
                           id: friend.id})
         .then(res => {
+            props.setFriends(res.data);
             console.log(res.data);
         })
         .catch( err => {
             console.log(err);
         })
 
-        let count = props.update
-        props.setUpdate(count++);
+        // let count = props.update
+        // props.setUpdate(count++);
     }
 
 

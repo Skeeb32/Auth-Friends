@@ -22,10 +22,10 @@ const FriendsList = (props) => {
     
     const [friends, setFriends] = useState([]);
 
-    const [update, setUpdate] = useState(0);
+    // const [update, setUpdate] = useState(0);
   
     useEffect(() => {
-        console.log(update);
+        console.log();
         const getFriends = () => {
             axiosWithAuth().get("http://localhost:5000/api/friends")
             .then( res => {
@@ -38,7 +38,7 @@ const FriendsList = (props) => {
 
         getFriends();
 
-    }, [update]);
+    }, []);
 
     return (
        <section><Header />
@@ -51,7 +51,7 @@ const FriendsList = (props) => {
                    return <Friend friend={friend} />
                 })}
             </ul>
-            <AddFriend update={update} setUpdate={setUpdate}/>
+            <AddFriend  setFriends = {setFriends}/>
         </Container></section> 
     )
 }
